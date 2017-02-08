@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @tale %>
+
+<%= form_for @tale do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.submit class: 'btn btn-primary'%>
+<% end %>

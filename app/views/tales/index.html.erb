@@ -8,3 +8,5 @@
 <%@tales.each do |tale|%>
 <h4><%= link_to tale.title, tale_path(tale) %></h4>
 <%end%>
+
+<h6> <%= link_to "Add a new web tale", new_tale_path %> </h6>
