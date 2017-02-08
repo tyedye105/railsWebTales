@@ -1,0 +1,10 @@
+<h1>Welcome to Web Tales!</h1>
+<h6>(Woo-hoo!)</h6>
+
+<p> Web Tales is a web-app were people come and post single sentences inspired by a randomized image. Tales of derring, bad, and good luck tales. Its up to you to come up with it!
+</p>
+
+<h3>List 'O Tales</h3>
+<%@tales.each do |tale|%>
+<h4><%= link_to tale.title, tale_path(tale) %></h4>
+<%end%>
