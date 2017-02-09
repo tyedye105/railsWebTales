@@ -5,22 +5,22 @@
 <% if @tale.contributions.any? %>
 <% @tale.contributions.each do |c|  %>
   <div class="contrib-container">
-    <div class ="row">
-  <%= image_tag  c.img_number %>
-  <p>
-    <%= c.content %>
-  </p>
-  <p>
-    <%= c.username %>
-  </p>
+    <!-- <div class="row">
+      <div class="col-md-4"> -->
+  <%=  image_tag  c.img_number  %>
+
+  <p><%= c.content %></p>
+  <p><%= c.username %></p>
+  <%= link_to "View Details", tale_contribution_path(@tale, c) %>
+<!-- </div> -->
   <% end %>
-<% else %>
-<p>
-  There is nothing here yet!
-</p>
+  <% else %>
+<p>There is nothing here yet!</p>
 <% end %>
-<
-</div>
+    <!-- </div> -->
+  </div>
+
+  <%= link_to "Add a contribution", new_tale_contribution_path(@tale) %>
 
 
 <h5> <%= link_to "Edit this title", edit_tale_path(@tale) %> </h5>

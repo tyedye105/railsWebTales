@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @contribution %>
+<%= form_for [@tale, @contribution] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content, class: 'form-control' %>
+  <%= f.label :username %>
+  <%= f.text_field :username, class: 'form-control' %>
+  <%= f.label :img_number %>
+  <%= f.text_field :img_number%>
+  <%= f.submit class: 'btn btn-primary'%>
+
+<% end %>
