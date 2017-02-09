@@ -5,8 +5,10 @@
 </p>
 
 <h3>List 'O Tales</h3>
-<%@tales.each do |tale|%>
+<%@tales.order(created_at: :desc).each do |tale|%>
 <h4><%= link_to tale.title, tale_path(tale) %></h4>
 <%end%>
 
 <h6> <%= link_to "Add a new web tale", new_tale_path %> </h6>
+<%= link_to "Order by title", tales_path(order: 'title') %>
+<%= link_to "Order by recently created", tales_path %>

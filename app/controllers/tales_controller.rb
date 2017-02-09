@@ -1,6 +1,9 @@
 class TalesController < ApplicationController
   def index
     @tales = Tale.all
+    if params[:order] == 'title'
+      @tales = Tale.all.order('title')
+    end
   end
 
   def show
