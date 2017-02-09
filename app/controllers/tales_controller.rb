@@ -39,6 +39,9 @@ class TalesController < ApplicationController
     @tale.destroy
     redirect_to tales_path
   end
+  def images
+    @images = all_images
+  end
 
 private
   def tale_params
