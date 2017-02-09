@@ -1,5 +1,10 @@
 <h1> <%= @tale.title %> </h1>
 
-<p><%=  image_tag  @contribution.img_number  %></p>
+
 <p><%= @contribution.content %></p>
 <p><%= @contribution.username %></p>
+
+<%= link_to "Edit this contribution", edit_tale_contribution_path(@tale, @contribution) %>
+<%= link_to "Delete contribution", tale_contribution_path(@tale, @contribution),
+              :data => {:confirm => "Are you sure? It was a good one.",
+              :method => "delete"}%>
