@@ -17,8 +17,10 @@ class TalesController < ApplicationController
   def create
     @tale = Tale.new(tale_params)
     if @tale.save
+      flash[:notice]="You have added a tale!"
       redirect_to tales_path
     else
+      flash[:alert]="Oops, something went wrong...try again!"
       render :new
     end
   end
@@ -29,8 +31,10 @@ class TalesController < ApplicationController
   def update
     @tale = Tale.find(params[:id])
     if @tale.update(tale_params)
+      flash[:notice]="You have updated your tale!"
       redirect_to tale_path(@tale)
     else
+      flash[:alert]="Oops, something went wrong...try again!"
       render :edit
     end
   end

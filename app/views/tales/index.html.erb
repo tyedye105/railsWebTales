@@ -7,7 +7,7 @@
 </p>
 </div>
 <div class="well">
-  <h2>List 'O Tales</h2>
+  <h2>List 'O Tales:</h2>
   <%@tales.order(created_at: :desc).each do |tale|%>
   <h4><%= link_to tale.title, tale_path(tale) %></h4>
 <%end%>

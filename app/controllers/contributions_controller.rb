@@ -13,8 +13,10 @@ class ContributionsController < ApplicationController
     @tale = Tale.find(params[:tale_id])
     @contribution = @tale.contributions.new(contribution_params)
     if @contribution.save
+      flash[:notice]="You have added a contribution!"
       redirect_to tale_path(@tale)
     else
+      flash[:alert]="Oops, something went wrong...try again!"
       render :new
     end
   end
@@ -26,8 +28,10 @@ class ContributionsController < ApplicationController
     @tale = Tale.find(params[:tale_id])
     @contribution = Contribution.find(params[:id])
       if @contribution.update(contribution_params)
+        flash[:notice]="You have updated your contribution!"
         redirect_to tale_path(@tale)
       else
+        flash[:alert]="Oops, something went wrong...try again!"
         render :edit
       end
     end

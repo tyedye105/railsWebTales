@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "the add a tale process" do
   it "adds a new tale" do
     visit tales_path
-    click_link "Add a new web tale"
+    click_button "Add a new web tale"
     fill_in 'Title', :with => "Whatever"
     click_on "Create Tale"
     expect(page).to have_content 'Whatever'
