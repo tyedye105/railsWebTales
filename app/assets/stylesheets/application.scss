@@ -17,3 +17,78 @@
 .btn {
   margin-top: 15px;
 }
+.btn.btn-info {
+  box-shadow: 0px 0px 1px 3px lightblue;
+}
+
+.btn.btn-success {
+  box-shadow: 0px 0px 1px 3px lightgreen;
+}
+
+.btn.btn-danger {
+  box-shadow: 0px 0px 1px 3px #ea716d;
+}
+
+.btn.btn-primary {
+  box-shadow: 0px 0px 1px 3px blue;
+}
+
+
+.jumbotron {
+  text-align: center;
+}
+
+.row {
+  margin-left: 15%;
+}
+
+.well {
+  width: 35%;
+  margin-left: 33%;
+  text-align: center;
+}
+
+body {
+  font-family: monospace;
+  background-size: cover;
+  background-image: image-url("background3.jpg");
+}
+
+html {
+  height: 100%;
+}
+
+h1.title {
+  text-shadow: 1px 1px 2px grey;
+  color: white;
+  text-align: center;
+    margin-bottom: 50px;
+}
+
+.btn-filter {
+  background-color: #52b26f;
+  box-shadow: 0px 0px 1px 3px #6be08e;
+}
+
+.btn-warning {
+  box-shadow: 0px 0px 1px 3px lightyellow;
+}
+
+h4, a {
+  color: #424242;
+}
+
+h4, a:hover {
+  color: #bdbdbd;
+}
+
+h6#woo-hoo {
+  color: white;
+  text-align: center;
+}
+
+#title-page {
+  color: white;
+  text-align: center;
+  margin-bottom: 50px;
+}

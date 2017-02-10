@@ -1,14 +1,17 @@
-<h1>Contributing to: <%= @tale.title %></h1>
+<h1 class="title">Contributing to: <%= @tale.title %></h1>
   <% if @tale.contributions.any? %>
+  <div class="well">
   <h3>The Story So Far:</h3>
+  </div>
   <% @tale.contributions.each do  |contrib| %>
+  <div class="well">
   <p> <%= image_tag contrib.image %>  <%= contrib.content%></p>
   <p> written by: <%= contrib.username %> </p>
+</div>
   <% end %>
   <% else %>
+  <div class="well">
   <p> There is nothing to this tale! Add something! </p>
+</div>
   <% end %>
-  <br>
-  <h2> Add to this tale!</h2>
-
 <%= render "form" %>

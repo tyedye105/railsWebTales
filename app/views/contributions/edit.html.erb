@@ -1,4 +1,6 @@
+<h1 class="title"> Edit Contribution:</h1>
 <%= render "layouts/errors", :object => @contribution %>
+<div class="well">
 <%= image_tag @contribution.image %>
 <%= form_for [@tale, @contribution] do |f| %>
   <%= f.label :content %>
@@ -6,6 +8,12 @@
   <%= f.label :username %>
   <%= f.text_field :username, class: 'form-control' %>
   <%= f.hidden_field :image, :value => @contribution.image %>
-  <%= f.submit class: 'btn btn-primary'%>
+</div>
+<div class="row">
+  <div class="col-md-12">
+      <%= f.submit class: 'btn btn-primary'%>
+  </div>
+</div>
+
 
 <% end %>

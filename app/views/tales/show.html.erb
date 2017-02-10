@@ -1,29 +1,29 @@
-<div class="jumbotron">
-<h1><%= @tale.title %></h1>
-</div>
+<h1 class="title"><%= @tale.title %></h1>
 
 <% if @tale.contributions.any? %>
 <% @tale.contributions.each do |c|  %>
-  <div class="contrib-container">
-    <!-- <div class="row">
-      <div class="col-md-4"> -->
-
-  <p><%= image_tag c.image %></p>
-  <p><%= c.content %></p>
-  <p><%= c.username %></p>
-  <%= link_to "View Details", tale_contribution_path(@tale, c) %>
-<!-- </div> -->
-  <% end %>
+    <div class="well">
+      <p><%= image_tag c.image %></p>
+      <p><%= c.content %></p>
+      <p>Written by: <%= c.username %></p>
+      <%= link_to "View Details", tale_contribution_path(@tale, c)%>
+    </div>
+    <% end %>
   <% else %>
-<p>There is nothing here yet!</p>
-<% end %>
-    <!-- </div> -->
+  <div class="well">
+    <p>There is nothing here yet!</p>
   </div>
-
-  <%= link_to "Add a contribution", new_tale_contribution_path(@tale) %>
-
-
-<h5> <%= link_to "Edit this title", edit_tale_path(@tale) %> </h5>
-<h5> <%= link_to "Delete this tale", tale_path(@tale),
-                                      :data => {:confirm => "Are you sure?",
-                                                :method => "delete"}%> </h5>
+<% end %>
+<div class="row">
+  <div class="col-md-4">
+    <%= button_to "Add a contribution",  new_tale_contribution_path(@tale), :method => :get, class:"btn btn-info" %>
+  </div>
+  <div class="col-md-4">
+    <%= button_to "Edit this title", edit_tale_path(@tale), :method => :get, class: "btn btn-success " %>
+  </div>
+  <div class="col-md-4">
+    <%= button_to "Delete this tale", tale_path(@tale), :method => :delete, class: "btn btn-danger ",
+                                                                  :data => {:confirm => "Are you sure?",
+                                                                            :method => "delete"}%>
+  </div>
+</div>

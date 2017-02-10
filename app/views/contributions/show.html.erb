@@ -1,10 +1,18 @@
-<h1> <%= @tale.title %> </h1>
+<h1 class="title"> <%= @tale.title %> </h1>
+<div class="well">
+<%= image_tag @contribution.image %>
+<h5><%= @contribution.content %></h5>
+<h5><%= @contribution.username %></h5>
+</div>
 
-
-<p><%= @contribution.content %></p>
-<p><%= @contribution.username %></p>
-
-<%= link_to "Edit this contribution", edit_tale_contribution_path(@tale, @contribution) %>
-<%= link_to "Delete contribution", tale_contribution_path(@tale, @contribution),
+<div class="row">
+  <div class="col-md-6">
+    <%= button_to "Edit this contribution", edit_tale_contribution_path(@tale, @contribution), :method => :get, class: "btn btn-success"  %>
+  </div>
+  <div class="col-md-6">
+<%= button_to "Delete contribution", tale_contribution_path(@tale, @contribution), :method => :delete, class: "btn btn-danger",
               :data => {:confirm => "Are you sure? It was a good one.",
               :method => "delete"}%>
+    </div>
+
+<div>

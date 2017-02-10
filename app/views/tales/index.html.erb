@@ -1,15 +1,25 @@
-<h1>Welcome to Web Tales!</h1>
-<h6>(Woo-hoo!)</h6>
-
+<div id="title-page">
+  <h1>Welcome to Web Tales!</h1>
+  <h6>(Woo-hoo!)</h6>
+</div>
+<div class="well">
 <p> Web Tales is a web-app were people come and post single sentences inspired by a randomized image. Tales of derring, bad, and good luck tales. Its up to you to come up with it!
 </p>
-
-<h3>List 'O Tales</h3>
-<%@tales.order(created_at: :desc).each do |tale|%>
-<h4><%= link_to tale.title, tale_path(tale) %></h4>
+</div>
+<div class="well">
+  <h2>List 'O Tales</h2>
+  <%@tales.order(created_at: :desc).each do |tale|%>
+  <h4><%= link_to tale.title, tale_path(tale) %></h4>
 <%end%>
-
-<h6> <%= link_to "Add a new web tale", new_tale_path %> </h6>
-<%= link_to "Order by title", tales_path(order: 'title') %>
-<%= link_to "Order by recently created", tales_path %>
-<%= link_to "View possible images", images_tales_url %>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <h6> <%= button_to "Add a new web tale", new_tale_path, :method => :get, class: "btn btn-info"  %> </h6>
+  </div>
+  <div class="col-md-4">
+    <%= link_to "Order by title", tales_path(order: 'title'), :method => :get, class: "btn btn-filter"  %>
+  </div>
+  <div class="col-md-4">
+    <%= link_to "Order by recently created", tales_path, :method => :get, class: "btn btn-warning"  %>
+  </div>
+</div>
